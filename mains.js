@@ -27,6 +27,7 @@ function greaterNum(num1, num2, num3){
         console.log(`The greater number of ${num1}, ${num2}, ${num3} is ${num3} `);
     }
     }
+ 
 //ex3
 function helloWorld(hola){
     if (hola =="es" ){
@@ -74,7 +75,8 @@ function pluralize(noun, number){
 }
 //ex6
 //my.answar:
-//(ice cream && strawberry && chocolate ||stracciatella != carmael )
+//strawberry && chocolate || strawberry && stracciatella || chocolate && stracciatella && !caramel;
+
 //ex7
 function helloWelcome(){
     let userName = prompt("Please enter your name");
@@ -87,7 +89,7 @@ function helloWelcome(){
  //ex8 
 }
 function kindOfNumber(x){
-    if(x>0 && (number%2==0) ){
+    if(x>0 && (x%2==0) ){
         return `${x} is positive and odd`
     }
     else if (x>0){
@@ -98,8 +100,8 @@ function kindOfNumber(x){
     }
 }
 //ex9
-function prime(x){
-    if ((x%x == 0) && (x%1==x)){
+function prime(p){
+    if ((p % p == 0) && (p % 1 == p)){
         return `true`
     }
     else{
@@ -143,8 +145,8 @@ console.log(calculator(2, 0, "/")); // Output: "Cannot divide by zero"
 console.log(calculator(2, 3, "^")); // Output: "Invalid operator"
 //ex11
 function isLeapYear(year){
-    if(year%4 ==0  ){
-        if((year%100 != 0)&& year % 400 == 0){
+    if(year % 4 === 0){
+        if((year % 100 != 0)&& year % 400 == 0){
             return `this is a LeapYear`
         }
         else if (year < 100){
@@ -156,16 +158,21 @@ function isLeapYear(year){
     }
 }
 //ex13
+// function maxi(num1, num2, num3){
+//    let maxnum=  Math.max(num1,num2, num3)
+//    console.log(maxnum);
+// }
+
 function sortNum(num1, num2, num3){
-    let maxNum = greaterNum(num1,num2,num3);
-    if (maxnum == num1){
+    let maxNum = Math.max(num1,num2,num3);
+    if (maxNum == num1){
+
         if(num2>num3){
             return num1, num2, num3
         }
         else{
             return num1, num3, num2
         }
-
     }
     else if(maxNum == num2){
         if(num1>num3){
@@ -174,7 +181,6 @@ function sortNum(num1, num2, num3){
         else{
             return num2, num3, num1
         }
-
     }
     else{
         if(num2>num1){
@@ -183,8 +189,9 @@ function sortNum(num1, num2, num3){
         else{
             return num3, num1, num2
         }
-        }
-    }
+    }    
+}
+
 //ex14
     function table(crewStatus, computerStatusCode, shuttleSpeed){
         if (crewStatus == "true"){
@@ -193,10 +200,10 @@ function sortNum(num1, num2, num3){
         else{
             console.log( "Crew Not Ready");
         }
-        if(computerStatusCode == 200){
+        if(computerStatusCode === 200){
             console.log( "Please stand by. Computer is rebooting.");
         }
-        else if(computerStatusCode ==400){
+        else if(computerStatusCode === 400){
             console.log("Success! Computer online.");
         }
         else{
@@ -205,7 +212,7 @@ function sortNum(num1, num2, num3){
         if(shuttleSpeed > 17500){
             console.log("ALERT: Escape velocity reached!");
         }
-        else if(shuttleSpeed<8000){
+        else if(shuttleSpeed < 8000){
             console.log("ALERT: Cannot maintain orbit!");
         }
         else{
