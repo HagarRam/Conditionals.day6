@@ -86,17 +86,25 @@ function helloWelcome(){
     else {
         document.write(`Hello friend, Welcome!`);
     }
+
  //ex8 
 }
 function kindOfNumber(x){
-    if(x>0 && (x%2==0) ){
-        return `${x} is positive and odd`
+    if (x ===0){
+        return `zero`
     }
-    else if (x>0){
+    else if(x > 0 && (x % 2 === 0)){
         return `${x} is positive and even`
     }
+     else if (x > 0 && (x % 2 > 0)){
+        return `${x} is positive and odd`
+    }
+     else if (x < 0 && (x % 2 ===  0)){
+        return `${x} is negative and even`
+    }
     else{
-        `zero`
+         return `${x} is negative and odd`
+      
     }
 }
 //ex9
@@ -162,7 +170,6 @@ function isLeapYear(year){
 //    let maxnum=  Math.max(num1,num2, num3)
 //    console.log(maxnum);
 // }
-
 function sortNum(num1, num2, num3){
     let maxNum = Math.max(num1,num2,num3);
     if (maxNum == num1){
@@ -221,5 +228,35 @@ function sortNum(num1, num2, num3){
     }
 
     //ex15
-    
-    
+    function color(color1){
+        switch (color1) {
+            case "red":
+                console.log("Red is the color of danger"
+                ); 
+                break;
+            case "orange":
+                console.log("orange is the color of danger"
+                ); 
+                break;
+            case "yellow":
+                console.log("yellow is the color of danger"
+                ); 
+                break;
+            case "green":
+                console.log("green is the color of danger"
+                ); 
+                break;
+            case "blue":
+                console.log("blue is the color of danger"
+                ); 
+                break;
+            case "purple":
+                console.log("purple is the color of danger"
+                ); 
+                break;
+            default:
+                console.log("Invalid color");
+                break;
+        }
+    }
+   
